@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planeta Claro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .post {
+            margin-bottom: 20px;
+        }
+
+        .post h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .post p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 400px;
+            overflow: hidden;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .carousel {
+                max-width: 300px;
+            }
+
+            .carousel-buttons button {
+                font-size: 14px;
+                padding: 5px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = document.querySelectorAll('.carousel img');
+            const prevButton = document.querySelector('.prev');
+            const nextButton = document.querySelector('.next');
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                images.forEach((img, index) => {
+                    img.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                updateCarousel();
+            });
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                updateCarousel();
+            });
+
+            updateCarousel();
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Blog de Limpieza Comunitaria</h1>
+    <p>Un espacio para compartir nuestras experiencias y logros</p>
+</header>
+
+<div class="container">
+    <div class="post">
+        <h2>Primera Recolecta de Basura - 4 de enero</h2>
+        <p>El pasado 4 de enero de este año, llevamos a cabo nuestra primera recolecta de basura y limpieza de lugares públicos, marcando un hito importante en nuestro compromiso con el medio ambiente y la comunidad. La actividad contó con la entusiasta participación de 5 personas, quienes, armados con guantes, bolsas y una gran actitud, se unieron para devolverle a la avenida Simón Bolívar su esplendor. La limpieza se realizó específicamente en el tramo comprendido entre el Hospital General y la ciclopista, una zona frecuentemente transitada que había acumulado una preocupante cantidad de <a href="https://www.facebook.com/reel/162875150096628" target="_blank">residuos</a>.
+
+        <br>El evento fue un éxito rotundo, no solo por la cantidad de basura recolectada, sino también por la cálida respuesta de los vecinos, quienes expresaron su gratitud por este noble acto. Algunos comentaron que no se había realizado una limpieza similar desde el 30 de mayo de 2019, cuando el grupo de jóvenes activistas conocido como <a href="https://www.facebook.com/story.php?story_fbid=443686846384171&id=435673310518858&rdid=xB7bNyTIbOSN8exa"target="_blank">Green Teens</a> lideró una iniciativa similar en la zona. Este reconocimiento nos llena de orgullo y nos motiva a seguir organizando actividades que no solo mejoren el entorno, sino que también fomenten un sentido de comunidad y responsabilidad ambiental entre los habitantes.
+            
+        <br>Este logro, aunque modesto, representa un paso significativo hacia la construcción de un ambiente más limpio y saludable para todos, y esperamos que sea el primero de muchos esfuerzos colaborativos en pro del bienestar colectivo.</p>
+        <div class="carousel">
+            <img src="Marvin/imgs/im4.jpeg" alt="Foto de la recolecta" class="active">
+            <img src="Marvin/imgs/im5.jpeg" alt="Foto de la recolecta">
+            <img src="Marvin/imgs/im6.jpeg" alt="Foto de la recolecta">
+            <img src="Marvin/imgs/im7.jpeg" alt="Foto de la recolecta">
+            <img src="Marvin/imgs/im8.jpeg" alt="Foto de la recolecta">
+            <img src="Marvin/imgs/im9.jpeg" alt="Foto de la recolecta">
+            <img src="Marvin/imgs/im10.jpeg" alt="Foto de la recolecta">
+            <div class="carousel-buttons">
+                <button class="prev">&#8249;</button>
+                <button class="next">&#8250;</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Blog de Planeta Claro. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
